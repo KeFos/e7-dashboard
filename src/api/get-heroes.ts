@@ -1,9 +1,9 @@
 import type { Hero } from "../models/Hero";
 
-let localAPI: string = 'http://localhost:8000/';
+const url = import.meta.env.VITE_BACKEND_URL;
 
 export const getHeroes = async (): Promise<Hero[]> => {
-  const res = await fetch(localAPI + 'get-heroes');
+  const res = await fetch(`${url}/get-heroes`);
   if (!res.ok) throw new Error('Failed to fetch!');
   return res.json();
 }

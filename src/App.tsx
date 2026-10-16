@@ -1,8 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Navbar from './components/public/Navbar';
-import HeroList from './components/public/HeroList';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import HeroDetail from './components/pages/heroes/HeroDetail';
+import HeroList from './components/pages/heroes/HeroList';
 
 function App() {
   const queryClient = new QueryClient();
