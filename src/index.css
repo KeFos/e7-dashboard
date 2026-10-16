@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    @apply bg-gray-900;
+    @apply text-gray-100;
+  }
+}
+
+@theme {
+  --animate-slide-out: slide-out 0.75s ease-in-out forwards;
+  @keyframes slide-out {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-12%);
+    }
+  }
+
+  --animate-slide-up: slide-up 1s ease-in-out forwards;
+  @keyframes slide-up {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+}

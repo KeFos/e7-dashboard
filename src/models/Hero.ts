@@ -19,6 +19,8 @@ export type BaseStat = {
   effectiveness?: number
   effect_resistance?: number
   dual_attack?: number
+  updated_at?: Date
+  created_at?: Date
 }
 
 export type Hero = {
@@ -45,7 +47,7 @@ export type Skill = {
   increasing_stat?: string[]
   increasing_value?: number[]
   cooldown?: number
-  passive?: boolean
+  is_active?: boolean
   soul_gain?: number
   description?: string
   can_soulburn?: boolean
@@ -53,7 +55,7 @@ export type Skill = {
   soul_description?: string
 }
 
-export type HeroDetail = {
+export type HeroDetailType = {
   hero: Hero
   skills: Skill[]
   base_stat: BaseStat
