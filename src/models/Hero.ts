@@ -1,3 +1,5 @@
+import { ELEMENT_BADGE_COLORS, ROLE_BADGE_COLORS, ZODIAC_BADGE_COLORS, type BASE_GRADE } from '../constants/badgeColors'
+
 export type Zodiac = {
   id?: number
   name?: string
@@ -27,11 +29,11 @@ export type Hero = {
   id?: string
   base_stat_id?: number
   name?: string
-  zodiac?: string
+  zodiac?: keyof typeof ZODIAC_BADGE_COLORS
   gender?: string
-  role?: string
+  role?: keyof typeof ROLE_BADGE_COLORS
   base_grade?: number
-  element?: string
+  element?: keyof typeof ELEMENT_BADGE_COLORS
   imprint_release?: string
   area_of_imprint?: boolean[]
   release_value?: number[]
@@ -59,4 +61,12 @@ export type HeroDetailType = {
   hero: Hero
   skills: Skill[]
   base_stat: BaseStat
+}
+
+export type HeroSearchQueryType = {
+  name: string
+  zodiacs: Set<keyof typeof ZODIAC_BADGE_COLORS>
+  roles: Set<keyof typeof ROLE_BADGE_COLORS>
+  elements: Set<keyof typeof ELEMENT_BADGE_COLORS>
+  base_grade: Set<BASE_GRADE>
 }
